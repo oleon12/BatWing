@@ -1,3 +1,5 @@
 # BatWing
 
-Thi package calculate the Lifting Surface Area of a Bat's Wing using different formulas, and also calculate the Dynamics measures of the Bat's wing.
+This package calculates the Lifting Surface Area (LSA) of a Bat's wing using different formulas, and also calculate the dynamics measures of the Bat's wing.
+
+The input files for both LSA function and Dynamics function are very specific, the colums order must be the same the example data ( https://github/oleon12/BatWing/data ).
