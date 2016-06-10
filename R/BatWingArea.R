@@ -1,5 +1,5 @@
 
-BatWing1 <- function(x,scale=FALSE,method=c("BM-1988","A-1988","SS-1979","P-1977")){
+BatWingArea <- function(x,scale=FALSE,method=c("BM-1988","A-1988","SS-1979","P-1977")){
   
   ## Bats measures are taken in mm and gr, if scale id true, all measures be in meters and kilograms
   
