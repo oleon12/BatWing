@@ -24,10 +24,10 @@
 #'
 #'
 
-BatWingAll <- function(x, scale=F){
+BatWingAll <- function(x, scaleArea=F, scaleDynamics=F){
   
   
-  if(scale==T){
+  if(scaleArea==T){
     
     Area.r <- BatWingArea(x,scale=T)
     
@@ -39,22 +39,27 @@ BatWingAll <- function(x, scale=F){
   
   out.list <- list()
   
-  if(scale==F){
+  stat.l <- list()
+  
+  if(scaleArea==F){
     
-    warning("scale is FALSE. Remember, for the Dynamic formulas the LSA or Area must be in squared meters")
+    warning("scaleArea is FALSE, remember, for the Dynamic formulas the LSA or Area must be in squared meters")
     
   }
   
-  for (i in 1:length(colnames(Area.r))){
+  for (i in 1:length(colnames(Area.r[[1]]))){
     
-    r1 <- data.frame(x[,1],x[,6],x[,7],Area.r[,i])
+    r1 <- data.frame(x[,1],x[,6],x[,7],Area.r[[1]][,i])
     
+    colnames(r1)[2:4] <- c("Mass","Wingspan","Area")
     
-    if(scale==T){
+    if(scaleDynamics==T){
       
       Dyn.r <- BatWingDynamics(r1,scale=T)
       
-      Dyn.r <- cbind(Area=Area.r[,i],Dyn.r)
+      stat.l[[i]] <- Dyn.r[[2]]
+      
+      Dyn.r <- cbind(Area=Area.r[[1]][,i],Dyn.r[[1]])
       
       out.list[[i]] <- Dyn.r
       
@@ -62,18 +67,23 @@ BatWingAll <- function(x, scale=F){
       
       Dyn.r <- BatWingDynamics(r1,scale=F)
       
-      Dyn.r <- cbind(Area=Area.r[,i],Dyn.r)
+      stat.l[[i]] <- Dyn.r[[2]]
+      
+      Dyn.r <- cbind(Area=Area.r[[1]][,i],Dyn.r[[1]])
       
       out.list[[i]] <- Dyn.r
     }
     
   }
   
-  names(out.list) <- colnames(Area.r)
+  names(out.list) <- c("BloodMcFarlane","Aldrige","SmithStarrett","Pirlot")
   
-  return(out.list)
+  names(stat.l) <-  c("BloodMcFarlane","Aldrige","SmithStarrett","Pirlot")
+  
+  out <- list(out.list,stat.l)
+  names(out) <-c("Dynamics","Stats")
+  
+  return(out)
   
 }
-
-
 
