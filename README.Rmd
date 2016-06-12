@@ -36,8 +36,8 @@ The LSA formulas which this package use are the proposal by:
   ![AA](https://latex.codecogs.com/gif.latex?LSA%20%3D%20%282.85*10%5E%7B-3%7D%29*M%5E%7B%5Cfrac%7B2%7D%7B3%7D%7D)
 
 <sub>*Where:*
-- *FA = Forearm Length*
-- *B = Wingspan*
-- *III = Digit 3 Length*
-- *IV = Digit 4 Length*
-- *V = Digit 5 Length*<\sub>
+<sub>- *FA = Forearm Length*
+<sub>- *B = Wingspan*
+<sub>- *III = Digit 3 Length*
+<sub>- *IV = Digit 4 Length*
+<sub>- *V = Digit 5 Length*<\sub>
