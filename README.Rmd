@@ -14,6 +14,8 @@ The input files for both LSA function and Dynamics function are very specific, t
 
 ___
 
+## Formulas
+
 The LSA formulas which this package use are the proposal by:
 
 - **Pirlot 1977**
@@ -43,6 +45,25 @@ The LSA formulas which this package use are the proposal by:
    , _**III** = Digit 3 Length_, _**IV** = Digit 4 Length_
    , _**V** = Digit 5 Length_, _**M** = Mass*_
    
+   
+The Dynamics formulas which this package use are:
+
+- **Aspect Ratio (Vaughan 1959; Norberg & Rayner 1987)**
+
+  ![AR](https://latex.codecogs.com/gif.latex?AR%20%3D%20%5Cfrac%7BB%5E%7B2%7D%7D%7BS%7D)
+  
+  **Wing Loading (Norberg & Rayner 1987)**
+  
+  ![WL](https://latex.codecogs.com/gif.latex?WL%20%3D%20%5Cfrac%7B%28M*9.81%5Cfrac%7Bm%7D%7Bsec%5E%7B2%7D%7D%29%7D%7BS%7D)
+  
+  **Relative Wing Loading (Norberg 2000)**
+  
+  ![RWL]()
+  
+  **Minimum Power Speed (Norber & Rayner 1987)**
+  
+  ![MPS](https://latex.codecogs.com/gif.latex?MPS%3D6.58%20*M%5E%7B0.422%7D*B%5E%7B-0.479%7D*S%5E%7B-0.148%7D)
+  
 ___
 
 
