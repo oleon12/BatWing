@@ -71,6 +71,7 @@ The Dynamics formulas which this package use are:
    <sup> _**S** = LSA in squared meters_, _**B**= Wingspan in squared meters_ 
    ,  _**9.81** = Gravity constant_, _**M** = Mass in Kilograms*_
   ___ 
+  
 ___
 
 ## Example
