@@ -91,7 +91,7 @@ ___
 library(BatWing)
 
 data(wing)
-head(data)
+head(wing)
 ```
 
 ```
@@ -105,7 +105,7 @@ head(data)
 ```
 
 ```{r}
-LSA <- BatWingArea(x=data, scale=F)
+LSA <- BatWingArea(x=wing, scale=F)
 head(LSA$Area)
 ```
 
@@ -131,7 +131,7 @@ var      118.21944     258.90400     178.52358     293.20558 77.680556 5946.4555
 ```
 
 ```{r}
-LSA <- BatWingArea(x=data, scale=F, method=c("BM","SS"))
+LSA <- BatWingArea(x=wing, scale=F, method=c("BM","SS"))
 head(LSA$Area)
 ```
 
@@ -148,8 +148,8 @@ ___
 ### BatWingDynamics()
 
 ```{r}
-data <- read.csv("dynamics.csv",header=T)
-head(data)
+data(dynamics)
+head(dynamics)
 ```
 
 ```
@@ -163,7 +163,7 @@ head(data)
 ```
 
 ```{r}
-Dym <- BatWingDynamics(x=data, scale=T)
+Dym <- BatWingDynamics(x=dynamics, scale=T)
 head(Dym$Dynamics)
 ```
 
@@ -189,7 +189,7 @@ var  7.768056e-05 0.005946456 3.111293e-05  3.071250 26.70357 407.06138 0.147147
 ```
 
 ```{r}
-Dym <- BatWingDynamics(x= data, scale=T, method = c("AR","RWL"))
+Dym <- BatWingDynamics(x= dynamics, scale=T, method = c("AR","RWL"))
 head(Dym$Dynamics)
 ```
 
@@ -206,9 +206,9 @@ ___
 ### BatWingAll()
 
 ```{r}
-data <- read.csv("wing.csv", header=T)
+data(wing)
 
-All <- BatWingAll(x=data, scale=T)
+All <- BatWingAll(x=wing, scale=T)
 
 All$Dynamics
 ```
@@ -267,7 +267,7 @@ ODLAm-022 0.006740612 12.736085 24.013400 94.32475 4.392654
 ```
 
 ```{r}
-All <- BatWingAll(x=data, scale=F)
+All <- BatWingAll(x=wing, scale=F)
 ```
 
 ```
