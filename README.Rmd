@@ -58,7 +58,7 @@ The Dynamics formulas which this package use are:
   
   **Relative Wing Loading (Norberg 2000)**
   
-  ![RWL]()
+  ![RWL](https://latex.codecogs.com/gif.latex?RWL%3D%5Cfrac%7BWL%7D%7BM%5E%7B%5Cfrac%7B1%7D%7B3%7D%7D%7D)
   
   **Minimum Power Speed (Norber & Rayner 1987)**
   
@@ -66,6 +66,9 @@ The Dynamics formulas which this package use are:
   
 ___
 
+## Example
+
+### BatWingArea()
 
 ```{r}
 data <- read.csv("wing.csv", header=T)
@@ -123,6 +126,8 @@ ODLAM-016  3486.100  5107.123
 ODLAM-018  9706.515 11134.029
 ```
 
+### BatWingDynamics()
+
 ```{r}
 data <- read.csv("dynamics.csv",header=T)
 head(data)
@@ -178,6 +183,8 @@ ODLAM-014  9.546025 59.64392
 ODLAM-016 11.091175 73.59814
 ODLAM-018  9.840194 54.77358
 ```
+
+### BatWingAll
 
 ```{r}
 data <- read.csv("wing.csv", header=T)
