@@ -44,3 +44,14 @@ The LSA formulas which this package use are the proposal by:
    , _**V** = Digit 5 Length_, _**M** = Mass*_
    
 ___
+
+
+---
+params:
+  filename: "wing.csv"
+---
+
+```{r}
+data <- read.csv(params$file)
+head(data)
+```
