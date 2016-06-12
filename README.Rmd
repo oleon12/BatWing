@@ -184,7 +184,7 @@ ODLAM-016 11.091175 73.59814
 ODLAM-018  9.840194 54.77358
 ```
 ___
-### BatWingAll
+### BatWingAll()
 
 ```{r}
 data <- read.csv("wing.csv", header=T)
