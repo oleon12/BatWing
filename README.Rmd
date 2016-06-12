@@ -24,3 +24,4 @@ The LSA formulas which this package use are the proposal by:
 
   ![A](https://latex.codecogs.com/gif.latex?%5Calpha%20%3D%20arctan%28%5Cfrac%7BV%7D%7BIII%7D%29)
 
+- **Blood & McFarlane 1988**
