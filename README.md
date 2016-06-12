@@ -1,8 +1,10 @@
 # BatWing
 
+---
+**Package write in the R programming language**
+---
 ```
-Package write in the R programming language
-
+Version 1.0.0. Beta (2016-06-10)
 ```
 
 This package calculates the Lifting Surface Area (LSA) of a Bat's wing using different formulas, and also calculate the dynamics measures of the Bat's wing.
