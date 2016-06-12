@@ -77,7 +77,7 @@ BatWingDynamics <- function(x,scale=FALSE,method=c("AR","WL","RWL","MPS")){
   
   l <- list(r,s)
   
-  names(l) <- c("Area","Stats")
+  names(l) <- c("Dynamics","Stats")
   
   return(l)
   
