@@ -15,3 +15,5 @@ The LSA formulas which this package use are the proposal by:
 
 - **Pirlot 1977**
   + LSA = 0.735 *B *V
+- **Smith & Starrett 1979**
+  + $LSA = 2 [(FA*V)+\1/2]$
