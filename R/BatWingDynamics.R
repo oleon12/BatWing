@@ -27,7 +27,7 @@
 #'
 
 BatWingDynamics <- function(x,scale=FALSE,method=c("AR","WL","RWL","MPS")){
-
+  
   if(scale==T){
     
     x[ , c(2:3)] <- x[,c(2,3)]/1000 ## Transform
@@ -61,7 +61,24 @@ BatWingDynamics <- function(x,scale=FALSE,method=c("AR","WL","RWL","MPS")){
   colnames(r) <- quote[which(quote%in%method)]
   
   rownames(r) <- x[,1]
+  mean1 <- apply(x[,-1], 2, mean)
+  mean2 <- apply(r, 2, mean)
+  sd1 <- apply(x[,-1], 2, sd)
+  sd2 <- apply(r, 2, sd)
+  var1 <- apply(x[,-1], 2, var)
+  var2 <- apply(r, 2, var)
   
-  return(r)
+  s1 <- rbind(mean1,sd1,var1)
+  s2 <- rbind(mean2,sd2,var2)
+  
+  s <- cbind(s1,s2)
+  
+  rownames(s) <- c("mean","sd","var")
+  
+  l <- list(r,s)
+  
+  names(l) <- c("Area","Stats")
+  
+  return(l)
   
 }
