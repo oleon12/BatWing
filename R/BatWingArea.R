@@ -1,5 +1,5 @@
 
-BatWingArea <- function(x,scale=FALSE,method=c("BM-1988","A-1988","SS-1979","P-1977")){
+BatWingArea <- function(x,scale=FALSE,method=c("BM","A","SS","P")){
   
   ## Bats measures are taken in mm and gr, if scale id true, all measures be in meters and kilograms
   
@@ -32,16 +32,33 @@ BatWingArea <- function(x,scale=FALSE,method=c("BM-1988","A-1988","SS-1979","P-1
     
   r <- cbind(BM,A,SS,P)
   
-  quote <- c("BM-1988","A-1988","SS-1979","P-1977")
+  quote <- c("BM","A","SS","P")
   
   r <- r[, which(quote%in%method)]
   
   colnames(r) <- quote[which(quote%in%method)]
   
   rownames(r) <- x[,1]
+
+  mean1 <- apply(x[,-1], 2, mean)
+  mean2 <- apply(r, 2, mean)
+  sd1 <- apply(x[,-1], 2, sd)
+  sd2 <- apply(r, 2, sd)
+  var1 <- apply(x[,-1], 2, var)
+  var2 <- apply(r, 2, var)
+    
+  s1 <- rbind(mean1,sd1,var1)
+  s2 <- rbind(mean2,sd2,var2)
+  
+  s <- cbind(s1,s2)
+
+  l <- list(r,s)
+  
+  names(l) <- c("Area","Stats")
   
   ## END
   
-  return(r)
+  return(l)
   
 }
+
