@@ -19,10 +19,14 @@
 #'
 #' BatWingAll(x = wing, scale=FALSE)
 #'
+#'@seealso \url{https://github.com/oleon12/BatWing/tree/master/README.Rmd}
 #'
 #'@author Leon-Alvarado Omar Daniel.
 #'
+#'@keyword Bat LSA, Bat Aspect Ratio, Bat Wing Loading
 #'
+#'@export
+
 
 BatWingAll <- function(x, scale=F){
   
