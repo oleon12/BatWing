@@ -1,3 +1,32 @@
+#'
+#' @title Lifting Surface Area (LSA) for Bat wings 
+#' 
+#'
+#' @description Calculate the LSA for Bat wings using different wings measures
+#' 
+#' @return The function return four LSA calculations. 
+#'
+#' @param x is the input matrix. This matrix is very specific, check the example.
+#' 
+#' @param scale if you want to transform milimeters and grames to meters and kilograms
+#' 
+#' @param method is the LSA calculation method ("BM","A","SS","P").
+#' 
+#' @return The function returns a S3 object with two matrices. First one
+#' is the LSA calculation, and second one have basic statistics for the input
+#' variables and the LSA values.
+#' 
+#' @examples
+#' library(BatWing)
+#' data(wing)
+#'
+#' BatWingArea(x = wing, scale = FALSE)
+#'
+#'
+#'@author Leon-Alvarado Omar Daniel
+#'
+#'
+
 
 BatWingArea <- function(x,scale=FALSE,method=c("BM","A","SS","P")){
   
