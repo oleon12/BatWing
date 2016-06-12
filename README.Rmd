@@ -38,7 +38,7 @@ The LSA formulas which this package use are the proposal by:
  
 <sup>*Where:*
 
-  <sup>*FA = Forearm Length* | <sup>*B = Wingspan*
+  | <sup>*FA = Forearm Length* | *B = Wingspan* |
   
   <sup>*III = Digit 3 Length*
   
