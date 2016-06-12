@@ -14,8 +14,10 @@ The input files for both LSA function and Dynamics function are very specific, t
 The LSA formulas which this package use are the proposal by:
 
 - **Pirlot 1977**
-  + LSA = 0.735 *B *V
+  
+  ![P](https://latex.codecogs.com/gif.latex?LSA%20%3D%200.735%20*B%20*V)
 - **Smith & Starrett 1979**
-  + ![](https://latex.codecogs.com/gif.latex?LSA%20%3D%202*%5B%28FA*V%29&plus;%5Cfrac%7B1%7D%7B2%7D%20*%28cos%28%5Calpha%20%29*III%20*IV%29&plus;%5Cfrac%7B1%7D%7B2%7D*%28sin%28%5Calpha%29*IV%20*V%29%5D)
+  
+  ![SS](https://latex.codecogs.com/gif.latex?LSA%20%3D%202*%5B%28FA*V%29&plus;%5Cfrac%7B1%7D%7B2%7D%20*%28cos%28%5Calpha%20%29*III%20*IV%29&plus;%5Cfrac%7B1%7D%7B2%7D*%28sin%28%5Calpha%29*IV%20*V%29%5D)
 
-$$\alpha$$
+
