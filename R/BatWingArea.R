@@ -52,6 +52,8 @@ BatWingArea <- function(x,scale=FALSE,method=c("BM","A","SS","P")){
   
   s <- cbind(s1,s2)
 
+  rownames(s) <- c("mean","sd","var")
+  
   l <- list(r,s)
   
   names(l) <- c("Area","Stats")
