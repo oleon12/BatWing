@@ -1,3 +1,5 @@
+
+
 BatWingAll <- function(x, scaleArea=F, scaleDynamics=F){
   
   
