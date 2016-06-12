@@ -14,6 +14,15 @@ The input files for both LSA function and Dynamics function are very specific, t
 
 ___
 
+## Installation
+
+```{r}
+library("devtools")
+
+install_github("oleon12/BatWing")
+```
+___
+
 ## Formulas
 
 The LSA formulas which this package use are the proposal by:
