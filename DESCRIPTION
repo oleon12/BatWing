@@ -1,0 +1,14 @@
+Package: BatWing
+Version: 1.0.0
+Date: 2016-06-10
+Title: Lifting Surface Area and Dynamic Measures for a Bat wing
+Author: Omar Daniel Leon-Alvarado
+Maintainer: Omar Daniel Leon-Alvarado <leon.alvarado12@gmail.com>
+Description: These functions calculate the wing area (LSA) and its dynamics
+    measures (Aspect Ratio, Wing Loading, Relative Wing Loading and Minimum Power
+    Speed). For the LSA implement 4 different approach or formulas: 1. Pirlot 1977,
+    2. Blood & McFarlane 1988, 3. Smith & Starrett 1979, 4. Aldrige 1988.
+License: GPL-2
+URL: https://github.com/oleon12/BatWing
+LazyData: false
+RoxygenNote: 5.0.1
