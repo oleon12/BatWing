@@ -46,12 +46,7 @@ The LSA formulas which this package use are the proposal by:
 ___
 
 
----
-params:
-  filename: "wing.csv"
----
-
 ```{r}
-data <- read.csv(params$file)
+data <- read.csv("wing.csv", header=T)
 head(data)
 ```
