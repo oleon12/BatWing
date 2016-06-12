@@ -223,7 +223,7 @@ ODLAm-022 0.006740612 12.736085 24.013400 94.32475 4.392654
 All <- BatWingAll(x=data, scale=F)
 ```
 
-```{r}
+```
 Warning message:
 In BatWingAll(bat.m, scale = F) :
   scaleArea is FALSE, remember, for the Dynamic formulas the LSA or Area must be in squared meters
