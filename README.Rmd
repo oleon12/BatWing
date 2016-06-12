@@ -44,7 +44,7 @@ The LSA formulas which this package use are the proposal by:
    <sup> _**FA** = Forearm Length_, _**B**= Wingspan_ 
    , _**III** = Digit 3 Length_, _**IV** = Digit 4 Length_
    , _**V** = Digit 5 Length_, _**M** = Mass*_
-   
+  ___ 
    
 The Dynamics formulas which this package use are:
 
@@ -52,15 +52,15 @@ The Dynamics formulas which this package use are:
 
   ![AR](https://latex.codecogs.com/gif.latex?AR%20%3D%20%5Cfrac%7BB%5E%7B2%7D%7D%7BS%7D)
   
-  **Wing Loading (Norberg & Rayner 1987)**
+- **Wing Loading (Norberg & Rayner 1987)**
   
   ![WL](https://latex.codecogs.com/gif.latex?WL%20%3D%20%5Cfrac%7B%28M*9.81%5Cfrac%7Bm%7D%7Bsec%5E%7B2%7D%7D%29%7D%7BS%7D)
   
-  **Relative Wing Loading (Norberg 2000)**
+- **Relative Wing Loading (Norberg 2000)**
   
   ![RWL](https://latex.codecogs.com/gif.latex?RWL%3D%5Cfrac%7BWL%7D%7BM%5E%7B%5Cfrac%7B1%7D%7B3%7D%7D%7D)
   
-  **Minimum Power Speed (Norber & Rayner 1987)**
+- **Minimum Power Speed (Norber & Rayner 1987)**
   
   ![MPS](https://latex.codecogs.com/gif.latex?MPS%3D6.58%20*M%5E%7B0.422%7D*B%5E%7B-0.479%7D*S%5E%7B-0.148%7D)
   
@@ -69,7 +69,7 @@ ___
 ## Example
 
 ### BatWingArea()
-
+___
 ```{r}
 data <- read.csv("wing.csv", header=T)
 head(data)
@@ -127,7 +127,7 @@ ODLAM-018  9706.515 11134.029
 ```
 
 ### BatWingDynamics()
-
+___
 ```{r}
 data <- read.csv("dynamics.csv",header=T)
 head(data)
@@ -185,7 +185,7 @@ ODLAM-018  9.840194 54.77358
 ```
 
 ### BatWingAll
-
+___
 ```{r}
 data <- read.csv("wing.csv", header=T)
 
