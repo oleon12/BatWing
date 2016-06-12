@@ -1,5 +1,5 @@
 # BatWing
-
+___
 ```
 Package write in the R programming language
 ```
@@ -67,9 +67,9 @@ The Dynamics formulas which this package use are:
 ___
 
 ## Example
-
-### BatWingArea()
 ___
+### BatWingArea()
+
 ```{r}
 data <- read.csv("wing.csv", header=T)
 head(data)
@@ -125,9 +125,9 @@ ODLAM-014  9485.410 10660.039
 ODLAM-016  3486.100  5107.123
 ODLAM-018  9706.515 11134.029
 ```
-
-### BatWingDynamics()
 ___
+### BatWingDynamics()
+
 ```{r}
 data <- read.csv("dynamics.csv",header=T)
 head(data)
@@ -183,9 +183,9 @@ ODLAM-014  9.546025 59.64392
 ODLAM-016 11.091175 73.59814
 ODLAM-018  9.840194 54.77358
 ```
-
-### BatWingAll
 ___
+### BatWingAll
+
 ```{r}
 data <- read.csv("wing.csv", header=T)
 
