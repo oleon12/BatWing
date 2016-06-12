@@ -7,7 +7,7 @@
 #' following Miranda-Esquivel (2016).
 #'
 #' 
-#' @format An BASE object, class data.drame.
+#' @format An BASE object, class data.frame.
 #'
 #'
 #'
