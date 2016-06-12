@@ -1,10 +1,8 @@
 # BatWing
-
+---
 ```
 **Package write in the R programming language**
 ```
----
-
 ```
 Version 1.0.0. Beta (2016-06-10)
 ```
