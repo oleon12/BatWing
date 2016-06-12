@@ -1,13 +1,13 @@
 #'
-#' @title Wing's dynamic measures 
+#' @title Wing's dynamic measures. 
 #' 
-#' @description Calculate the Dynamics measures for a Bat wing 
+#' @description Calculate the Dynamics measures for a Bat wing.
 #' 
-#' @return The function return four Dynamics meaures
+#' @return The function return four Dynamics meaures.
 #'
 #' @param x is the input matrix. This matrix is very specific, check the example.
 #' 
-#' @param scale if you want to transform milimeters and grames to meters and kilograms
+#' @param scale if you want to transform milimeters and grames to meters and kilograms.
 #' 
 #' @param method is the LSA calculation method ("AR","WL","RWL","MPS").
 #' 
@@ -19,10 +19,10 @@
 #' library(BatWing)
 #' data(dynamics)
 #'
-#' BatWingArea(x = wing, scale = FALSE)
+#' BatWingDynamics(x = wing, scale = FALSE)
 #'
 #'
-#'@author Leon-Alvarado Omar Daniel
+#'@author Leon-Alvarado Omar Daniel.
 #'
 #'
 
@@ -30,7 +30,7 @@ BatWingDynamics <- function(x,scale=FALSE,method=c("AR","WL","RWL","MPS")){
 
   if(scale==T){
     
-    x[ , 3] <- x[,3]/1000 ## Transform
+    x[ , c(2:3)] <- x[,c(2,3)]/1000 ## Transform
     
   }
   
@@ -65,6 +65,3 @@ BatWingDynamics <- function(x,scale=FALSE,method=c("AR","WL","RWL","MPS")){
   return(r)
   
 }
-
-
-
