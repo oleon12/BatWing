@@ -14,3 +14,4 @@ The input files for both LSA function and Dynamics function are very specific, t
 The LSA formulas which this package use are the proposal by:
 
 - **Pirlot 1977**
++ $LSA = 0.735*B*V$
