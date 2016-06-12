@@ -1,4 +1,4 @@
-# *BatWing*
+# BatWing
 
 ```
 Package write in the R programming language
