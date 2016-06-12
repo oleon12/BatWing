@@ -24,10 +24,10 @@
 #'
 #'
 
-BatWingAll <- function(x, scaleArea=F, scaleDynamics=F){
+BatWingAll <- function(x, scale=F){
   
   
-  if(scaleArea==T){
+  if(scale==T){
     
     Area.r <- BatWingArea(x,scale=T)
     
@@ -41,7 +41,7 @@ BatWingAll <- function(x, scaleArea=F, scaleDynamics=F){
   
   stat.l <- list()
   
-  if(scaleArea==F){
+  if(scale==F){
     
     warning("scaleArea is FALSE, remember, for the Dynamic formulas the LSA or Area must be in squared meters")
     
@@ -53,7 +53,7 @@ BatWingAll <- function(x, scaleArea=F, scaleDynamics=F){
     
     colnames(r1)[2:4] <- c("Mass","Wingspan","Area")
     
-    if(scaleDynamics==T){
+    if(scale==T){
       
       Dyn.r <- BatWingDynamics(r1,scale=T)
       
