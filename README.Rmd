@@ -144,7 +144,7 @@ All <- BatWingAll(x=data, scale=T)
 
 All$Dynamics
 ```
-```{r}
+```
 $BloodMcFarlane
                  Area        AR       WL       RWL      MPS
 ODLAM-011 0.010762960 10.118034 14.12762  56.66198 3.770959
