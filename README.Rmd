@@ -317,3 +317,49 @@ In BatWingAll(bat.m, scale = F) :
 ```
 
 Not all LSA formulas use the whole variables (e.g. Aldrige only use Mass variable, or Blood & McFarlane only use the length of Forearm, and digits V and III), so if you want only the results from a specific method and your data only have the requiere variables for the method you can fill the missing variables with 0 (zeros) in order to use the BatWingArea() function.
+
+For example, you have only the variables requiere to calculate the LSA usign the Blood & McFarlane method (FA, Digit V and III), you fill your missing variables with 0 like this:
+
+```
+          id ForearmLength Digit5.Length Digit4.Length Digit3.Length Mass  Wingspan
+1  ODLAM-011         41.40         63.20             0         87.50    0         0
+2  ODLAM-010         42.40         64.10             0         94.90    0         0
+3  ODLAM-012         37.90         54.60             0         76.00    0         0
+4  ODLAM-014         41.50         58.30             0         79.70    0         0
+5  ODLAM-016         31.00         28.40             0         60.75    0         0 
+6  ODLAM-018         42.10         59.15             0         79.90    0         0
+7  ODLAM-019         37.10         52.80             0         74.40    0         0
+8  ODLAM-020         67.65         84.15             0        116.00    0         0
+9  ODLAM-021         57.70         60.70             0        106.80    0         0
+10 ODLAm-022         37.25         31.30             0         68.70    0         0
+
+```
+
+Now, you can use the function.
+
+```{r}
+LSA <- BatWingArea(x=your.data, method=c("BM","A"))
+
+LSA
+```
+```
+$Area
+                 BM A
+ODLAM-011 10762.960 0
+ODLAM-010 11518.770 0
+ODLAM-012  8288.280 0
+ODLAM-014  9485.410 0
+ODLAM-016  3486.100 0
+ODLAM-018  9706.515 0
+ODLAM-019  7846.080 0
+ODLAM-020 21146.895 0
+ODLAM-021 13487.540 0
+ODLAm-022  4482.160 0
+
+$Stats
+     ForearmLength Digit5.Length Digit4.Length Digit3.Length Mass Wingspan            BM A
+mean      43.60000      55.67000             0      84.46500    0        0     10021.071 0
+sd        10.87288      16.09049             0      17.12325    0        0      4945.237 0
+var      118.21944     258.90400             0     293.20558    0        0  24455364.257 0
+
+```
