@@ -5,6 +5,8 @@ Package write in the R programming language
 ```
 ```
 Version 1.0.0. Beta (2016-06-10)
+Author Leon-Alvarado, Omar Daniel
+Contact leon.alvarado12@gmail.com
 ```
 
 
@@ -363,3 +365,23 @@ sd        10.87288      16.09049             0      17.12325    0        0      
 var      118.21944     258.90400             0     293.20558    0        0  24455364.257 0
 
 ```
+___
+
+## References
+
+- Aldridge, H. D. J. N. (1988). Flight kinematics and energetics in the little brown bat, Myotis 1ucifugu.v (Chiroptera:
+Vespertilionidae), with reference to the influence of ground effect. J . Zoo/., Land. 216: 507-517.
+
+- Blood, B. R. & McFarlane, D. A. (1988). A new method for calculating the wing area of bats. Mammalia 52: 600-603.
+
+- Norberg, U. M. & Rayner, J . M. V. (1987). Ecological morphology and flight in bats (Mammalia; Chiroptcra): wing
+adaptations. flight performance, foraging strategy and echolocation. Phil. Trails. R. Soc. ( B ) 316: 335-427.
+
+- Pirlot, P. (1977). Wing design and the origin of bats. In Major patterns in vertebrate evolution: 375 410. Hecht, M. K.,
+Goody, P. C. & Hecht, B. M. (Eds). New York: Plenum Press.
+
+- Smith, J. D. & Starrett, A. (1979). Morphometric analysis of chiropteran wings. Spec. Publs Mus. Texas tech. Unir. No. 16:
+229 316.
+
+- Vaughan, T. A. (1959). Functional morphology of three bats: Eumops, Myotis, Macrotus. Univ. Kans. Publs Mus. nut. Hist.
+12: 1-153.
