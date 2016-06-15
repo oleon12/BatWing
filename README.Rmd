@@ -91,7 +91,7 @@ ___
 BatWingArea function calculate the Lifting Surface Area of a bat wing using different wing measures (see Formulas section).
 This function also calculate the mean, standard deviation and variance of the input variables and LSA measures.
 
-Load the library and the example data **"wing"**, then check what is in the data example.
+Load the library and the example data **"wing"**, then check what is in the data.
 
 The data contains the identification colum (id)(in this case colector acronym, but also could be species name or other name),
 Forearm length, length of the digits 5, 4 and 3, mass and wingspan. All measures are in milimeters and grames. The id colum always must be a colum, never row names. The variables sort of the input data must be the same as this example data, if not, the calculation will be wrong.
@@ -112,7 +112,7 @@ head(wing)
 6 ODLAM-018          42.1         59.15         61.90         79.90 15.5      331
 ```
 
-Now, calculate the LSA for the wing data. Scale argument transform the variables from milimeters and grames to meters and kilograms, so you can have the LSA in squared meters or squared milimeters
+Now, calculate the LSA for the wing data. **_Scale_** argument transform the variables from milimeters and grames to meters and kilograms, so you can have the LSA in squared meters or squared milimeters
 
 The outcome **_LSA_** is a S3 object with two data frames : 1. Area (the LSA measures) and 2. Stats (variables statistics).
 Let's take a look to the LSA measures.
@@ -166,11 +166,19 @@ ODLAM-018  9706.515 11134.029
 ___
 ### BatWingDynamics()
 
+From the Bat wing, we can take different dynamics measures who are util for different studies associated with diet, behaivor, etc. BatWingDynamics() calculates the Aspect Ratio (AR), Wing Loading (WL), Relative Wing Loading (RWL) and Minimum Power Speed (MPS) for a Bat wing, to see the detailed formula see Formulas section. This function also calculates mean, standard deviation and variance of the input variables and the dynamics measures.
+
+Load the library and the example data **"dynamics"**, then check what is in the data.
+
+The data contains the identification colum (id)(in this case colector acronym, but also could be species name or other name),
+Mass, Wingspan and LSA (in squared meters in this case). All measures are in milimeters and grames (with the exception of the LSA). The id colum always must be a colum, never row names. The variables sort of the input data must be the same as this example data, if not, the calculation will be wrong.
+
 ```{r}
+library(BatWing)
+
 data(dynamics)
 head(dynamics)
 ```
-
 ```
          ID Mass Wingspan Area(inM^2)
 1 ODLAM-011 15.5      330 0.011892700
@@ -180,12 +188,17 @@ head(dynamics)
 5 ODLAM-016  7.5      238 0.005107123
 6 ODLAM-018 15.5      331 0.011134029
 ```
+Now, calculate the dynamics measures for the wing data. **_Scale_** argument transform the variables from milimeters and grames to meters and kilograms, so you can have the LSA in squared meters or squared milimeters, due to the Mass and Wingspan are in milimeters and grames and the LSA in squared meters its necessary transform these variables.
+
+The outcome **_Dym_** is a S3 object with two data frames : 1. Dynamics (the dynamics measures) and 2. Stats (variables statistics).
+Let's take a look to the LSA measures.
+
+The function calculated four different dynamics measures: AR: Aspect Ratio (Vaughan 1959; Norberg & Rayner 1987), WL: Wing Loading (Norberg & Rayner 1987), RWL: Relative Wing Loading (Norberg 2000) and MPS: Minimum Power Speed (Norberg & Rayner 1987) (detailed formulas in Formulas section). 
 
 ```{r}
 Dym <- BatWingDynamics(x=dynamics, scale=T)
 head(Dym$Dynamics)
 ```
-
 ```
                  AR       WL      RWL      MPS
 ODLAM-011  9.156878 12.78557 51.27941 3.715662
@@ -196,10 +209,11 @@ ODLAM-016 11.091175 14.40635 73.59814 3.625027
 ODLAM-018  9.840194 13.65678 54.77358 3.746655
 ```
 
+Now, let's take a look to the variables statistics.
+
 ```{r}
 Dym$Stats
 ```
-
 ```
              Mass    Wingspan  Area(inM^2)        AR       WL       RWL       MPS
 mean 1.775000e-02 0.337300000 1.173300e-02 10.333714 15.48375  61.14137 3.8564452
@@ -207,11 +221,13 @@ sd   8.813657e-03 0.077113264 5.577896e-03  1.752498  5.16755  20.17576 0.383598
 var  7.768056e-05 0.005946456 3.111293e-05  3.071250 26.70357 407.06138 0.1471475
 ```
 
+If you want an specific dynamic measures for you data, you can use the **_method_** argument to specify what measure you desire.
+In this case I want only the Aspect Ratio (AR) and Relative Wing Loading (SS) measures.
+
 ```{r}
 Dym <- BatWingDynamics(x= dynamics, scale=T, method = c("AR","RWL"))
 head(Dym$Dynamics)
 ```
-
 ```
                  AR      RWL
 ODLAM-011  9.156878 51.27941
@@ -223,6 +239,10 @@ ODLAM-018  9.840194 54.77358
 ```
 ___
 ### BatWingAll()
+
+BatWingAll() function is a combination of BatWingArea() and BatWingDynamics() functions. Using the data **"wing"** BatWingAll() first calculates the LSA and the using the four LSA results calculates the Dynamics measures. So at the end the you will have four Dynamics measures, each one calcuated using each LSA method.
+
+The outcome is a more complex S3 object with two objectos inside: 1. Dynamics, a list object with the dynamics measures, the list contain four data frames, each one is the dynamics measures calulates with an single LSA method. 2. Stats, a list objects with the variables statistics, the list contain four data frames, each one correspond to each LSA method.
 
 ```{r}
 data(wing)
@@ -284,6 +304,7 @@ ODLAM-020 0.031605478  8.261891 12.415569 36.30334 3.890423
 ODLAM-021 0.019050391  9.570879 10.556476 38.57160 3.446556
 ODLAm-022 0.006740612 12.736085 24.013400 94.32475 4.392654
 ```
+In general, the dynamics measures are calculated using the LSA in meters, so always when _**scale**_ argument is *FALSE* a warning message appears. Don't worry, is just an advice.
 
 ```{r}
 All <- BatWingAll(x=wing, scale=F)
