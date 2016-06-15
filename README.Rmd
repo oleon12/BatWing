@@ -315,3 +315,5 @@ Warning message:
 In BatWingAll(bat.m, scale = F) :
   scaleArea is FALSE, remember, for the Dynamic formulas the LSA or Area must be in squared meters
 ```
+
+Not all LSA formulas use the whole variables (e.g. Aldrige only use Mass variable, or Blood & McFarlane only use the length of Forearm, and digits V and III), so if you want only the results from a specific method and your data only have the requiere variables for the method you can fill the missing variables with 0 (zeros) in order to use the BatWingArea() function.
