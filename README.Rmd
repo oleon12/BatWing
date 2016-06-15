@@ -89,8 +89,9 @@ ___
 ### BatWingArea()
 
 BatWingArea function calculate the Lifting Surface Area of a bat wing using different wing measures (see Formulas section).
+This function also calculate the mean, standard deviation and variance of the input variables and LSA measures.
 
-Load the library and the example data **"wing"**, the check what is in the data example.
+Load the library and the example data **"wing"**, then check what is in the data example.
 
 ```{r}
 library(BatWing)
@@ -110,6 +111,8 @@ Forearm length, length of the digits 5, 4 and 3, mass and wingspan. All measures
 5 ODLAM-016          31.0         28.40         49.90         60.75  7.5      238
 6 ODLAM-018          42.1         59.15         61.90         79.90 15.5      331
 ```
+
+Now, calculate the LSA for the wing data. Scale argument transform the variables from milimeters and grames to meters and kilograms, so you can have the LSA in squared meters or squared milimeters
 
 ```{r}
 LSA <- BatWingArea(x=wing, scale=F)
