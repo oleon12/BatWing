@@ -93,15 +93,15 @@ This function also calculate the mean, standard deviation and variance of the in
 
 Load the library and the example data **"wing"**, then check what is in the data example.
 
+The data contains the identification colum (id)(in this case colector acronym, but also could be species name or other name),
+Forearm length, length of the digits 5, 4 and 3, mass and wingspan. All measures are in milimeters and grames. The id colum always must be a colum, never row names. The variables sort of the input data must be the same as this example data, if not, the calculation will be wrong.
+
 ```{r}
 library(BatWing)
 
 data(wing)
 head(wing)
 ```
-The data contains the identification colum (id)(in this case colector acronym, but also could be species name or other name),
-Forearm length, length of the digits 5, 4 and 3, mass and wingspan. All measures are in milimeters and grames. The id colum always must be a colum, never row names. The variables sort of the input data must be the same as this example data, if not, the calculation will be wrong.
-
 ```
          id ForearmLength Digit5.Length Digit4.Length Digit3.Length Mass Wingspan
 1 ODLAM-011          41.4         63.20         61.70         87.50 15.5      330
@@ -117,13 +117,12 @@ Now, calculate the LSA for the wing data. Scale argument transform the variables
 The outcome **_LSA_** is a S3 object with two data frames : 1. Area (the LSA measures) and 2. Stats (variables statistics).
 Let's take a look to the LSA measures.
 
+The function calculated four different LSA formulas: BM: Blood & McFarlane 1988, A: Aldrige 1988, SS: Smith & Starrett 1979 and P: Pirlot 1977 (detailed formulas in Formulas section). 
+
 ```{r}
 LSA <- BatWingArea(x=wing, scale=F)
 head(LSA$Area)
 ```
-
-The function calculated four different LSA formulas: BM: Blood & McFarlane 1988, A: Aldrige 1988, SS: Smith & Starrett 1979 and P: Pirlot 1977 (detailed formulas in Formulas section). 
-
 ```
                  BM         A        SS         P
 ODLAM-011 10762.960 0.2282375 11892.700 15329.160
@@ -146,6 +145,9 @@ mean      43.60000      55.67000      62.89500      84.46500 17.750000  337.3000
 sd        10.87288      16.09049      13.36127      17.12325  8.813657   77.11326     4945.237 0.4191581     5577.896     7309.019
 var      118.21944     258.90400     178.52358     293.20558 77.680556 5946.45556 24455364.257 0.1756935 31112928.033 53421752.534
 ```
+
+If you want an specific LSA method for you data, you can use the **_method_** argument to specify what method you desire.
+In this case I want only the Blood & McFarlane (BM) and Starret & Smith (SS) methods.
 
 ```{r}
 LSA <- BatWingArea(x=wing, scale=F, method=c("BM","SS"))
