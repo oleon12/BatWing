@@ -85,7 +85,12 @@ ___
 
 ## Example
 ___
+
 ### BatWingArea()
+
+BatWingArea function calculate the Lifting Surface Area of a bat wing using different wing measures (see Formulas section).
+
+Load the library and the example data **"wing"**, the check what is in the data example.
 
 ```{r}
 library(BatWing)
@@ -93,6 +98,8 @@ library(BatWing)
 data(wing)
 head(wing)
 ```
+The data contains the identification colum (id)(in this case colector acronym, but also could be species name or other name),
+Forearm length, length of the digits 5, 4 and 3, mass and wingspan. All measures are in milimeters and grames. The id colum always must be a colum, never row names. The variables sort of the input data must be the same as this example data, if not, the calculation will be wrong.
 
 ```
          id ForearmLength Digit5.Length Digit4.Length Digit3.Length Mass Wingspan
