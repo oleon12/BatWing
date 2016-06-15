@@ -114,10 +114,15 @@ Forearm length, length of the digits 5, 4 and 3, mass and wingspan. All measures
 
 Now, calculate the LSA for the wing data. Scale argument transform the variables from milimeters and grames to meters and kilograms, so you can have the LSA in squared meters or squared milimeters
 
+The outcome **_LSA_** is a S3 object with two data frames : 1. Area (the LSA measures) and 2. Stats (variables statistics).
+Let's take a look to the LSA measures.
+
 ```{r}
 LSA <- BatWingArea(x=wing, scale=F)
 head(LSA$Area)
 ```
+
+The function calculated four different LSA formulas: BM: Blood & McFarlane 1988, A: Aldrige 1988, SS: Smith & Starrett 1979 and P: Pirlot 1977 (detailed formulas in Formulas section). 
 
 ```
                  BM         A        SS         P
@@ -128,6 +133,8 @@ ODLAM-014  9485.410 0.2586375 10660.039 13669.309
 ODLAM-016  3486.100 0.0534375  5107.123  4968.012
 ODLAM-018  9706.515 0.2282375 11134.029 14390.308
 ```
+
+Now, let's take a look to the variables statistics.
 
 ```{r}
 LSA$Stats
